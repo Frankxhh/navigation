@@ -61,7 +61,7 @@ window.onbeforeunload = () => {
 }
 
 // 键盘事件 经验之谈 监听document
-$(document).on('keypress',(e)=>{
+const key=$(document).on('keypress',(e)=>{
     const key=e.key
     hashMap.forEach((node)=>{
         console.log(node.logo)
@@ -70,4 +70,7 @@ $(document).on('keypress',(e)=>{
             window.open(node.url)
         }
     })
+})
+$('.searchForm').on('keypress',(e)=>{
+    e.stopPropagation()
 })

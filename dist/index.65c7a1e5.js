@@ -61,7 +61,7 @@ window.onbeforeunload = ()=>{
     localStorage.setItem('x', string);
 };
 // 键盘事件 经验之谈 监听document
-$(document).on('keypress', (e)=>{
+const key1 = $(document).on('keypress', (e)=>{
     const key = e.key;
     hashMap.forEach((node)=>{
         console.log(node.logo);
@@ -70,6 +70,9 @@ $(document).on('keypress', (e)=>{
             window.open(node.url);
         }
     });
+});
+$('.searchForm').on('keypress', (e)=>{
+    e.stopPropagation();
 });
 
 //# sourceMappingURL=index.65c7a1e5.js.map
